@@ -1,12 +1,36 @@
 package com.vitalii.practice;
 
-public class Roadworks {
-    private String roadSection;
-    private Integer sessionNumber;
-    private LocalDate startDate;
-    private String contractor;
-    private String repairType;
+import jakarta.persistence.*;
+import java.time.LocalDate;
 
+@Entity
+@Table(name = "roadworks")
+public class Roadworks {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "road_section", nullable = false)
+    private String roadSection;
+
+    @Column(name = "session_number", nullable = false)
+    private Integer sessionNumber;
+
+    @Column(name = "start_date", nullable = false)
+    private LocalDate startDate;
+
+    @Column(name = "contractor", nullable = false)
+    private String contractor;
+
+    @Column(name = "repair_type", nullable = false)
+    private String repairType;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getRoadSection() {
         return roadSection;
