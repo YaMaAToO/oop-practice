@@ -1,4 +1,4 @@
-package com.vitalii.practice;
+package com.vitalii.practice.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
