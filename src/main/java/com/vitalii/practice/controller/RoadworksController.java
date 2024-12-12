@@ -22,20 +22,20 @@ public class RoadworksController {
         this.roadworksMapper = roadworksMapper;
     }
 
-    // Створення нових дорожніх робіт
+
     @PostMapping
     public ResponseEntity<RoadworksDTO> createRoadwork(
             @Valid @RequestBody RoadworksDTO roadworksDTO) {
-        // Перетворюємо DTO в Entity і зберігаємо в базу даних
+
         Roadworks roadwork = roadworksMapper.toEntity(roadworksDTO);
         Roadworks savedRoadwork = roadworksService.create(roadwork);
 
-        // Перетворюємо збережену сутність назад у DTO і повертаємо відповідь
+
         RoadworksDTO responseDTO = roadworksMapper.toDto(savedRoadwork);
         return ResponseEntity.ok(responseDTO);
     }
 
-    // Отримання всіх дорожніх робіт
+
     @GetMapping
     public ResponseEntity<List<RoadworksDTO>> getAllRoadworks() {
         List<Roadworks> roadworks = roadworksService.getAll();
@@ -45,7 +45,7 @@ public class RoadworksController {
         return ResponseEntity.ok(roadworksDTOs);
     }
 
-    // Отримання дорожніх робіт, згрупованих по дням
+
     @GetMapping("/grouped-by-day")
     public ResponseEntity<Map<String, List<RoadworksDTO>>> getRoadworksGroupedByDay() {
         Map<String, List<RoadworksDTO>> groupedRoadworks = roadworksService.getRoadworksGroupedByDay();

@@ -46,11 +46,11 @@ public class RoadworksService {
         repository.deleteById(id);
     }
 
-    // Метод для отримання дорожніх робіт, згрупованих по дням
+
     public Map<String, List<RoadworksDTO>> getRoadworksGroupedByDay() {
         List<Roadworks> roadworksList = repository.findAll();
         return roadworksList.stream()
-                .map(roadworksMapper::toDto) // Перетворення кожного Roadworks в RoadworksDTO
-                .collect(Collectors.groupingBy(roadworksDTO -> roadworksDTO.getStartDate().toString())); // Групування по даті початку робіт
+                .map(roadworksMapper::toDto)
+                .collect(Collectors.groupingBy(roadworksDTO -> roadworksDTO.getStartDate().toString()));
     }
 }
