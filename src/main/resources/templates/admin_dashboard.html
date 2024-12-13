@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель адміністратора</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Панель адміністратора</h1>
+<form action="/admin/add" method="POST">
+    <label for="entityName">Назва сутності:</label>
+    <input type="text" id="entityName" name="entityName" required>
+    <br>
+    <label for="entityDescription">Опис:</label>
+    <input type="text" id="entityDescription" name="entityDescription" required>
+    <br>
+    <button type="submit">Додати сутність</button>
+</form>
+
+<h2>Список сутностей</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Назва</th>
+        <th>Опис</th>
+        <th>Редагувати</th>
+        <th>Видалити</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Пример 1</td>
+        <td>Опис сутності 1</td>
+        <td><a href="/admin/edit/1">Редагувати</a></td>
+        <td><a href="/admin/delete/1">Видалити</a></td>
+    </tr>
+    <tr>
+        <td>Пример 2</td>
+        <td>Опис сутності 2</td>
+        <td><a href="/admin/edit/2">Редагувати</a></td>
+        <td><a href="/admin/delete/2">Видалити</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

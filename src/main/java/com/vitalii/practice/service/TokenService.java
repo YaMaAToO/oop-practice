@@ -8,8 +8,8 @@ import java.util.Date;
 @Service
 public class TokenService {
 
-    private static final String ADMIN_LOGIN = "admin"; // Замініть на значення з application.properties
-    private static final long TOKEN_EXPIRATION_TIME = 5 * 60 * 1000; // 5 хвилин у мілісекундах
+    private static final String ADMIN_LOGIN = "admin";
+    private static final long TOKEN_EXPIRATION_TIME = 5 * 60 * 1000;
 
     public String generateToken(String login) {
         long expirationTime = new Date().getTime() + TOKEN_EXPIRATION_TIME;
